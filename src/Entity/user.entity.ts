@@ -1,7 +1,7 @@
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import * as bcrypt from 'bcryptjs';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+// import * as bcrypt from 'bcryptjs';
 
-import { TodoEntity } from "./todo.entity";
+import { TodoEntity } from './todo.entity';
 @Entity('users')
 export class UserEntity {
   @PrimaryGeneratedColumn()
@@ -16,6 +16,6 @@ export class UserEntity {
   @Column()
   salt: string;
 
-  @OneToMany(() => TodoEntity, (todo) => todo.user )
-  todos: TodoEntity[]
+  @OneToMany(() => TodoEntity, (todo) => todo.user)
+  todos: TodoEntity[];
 }
